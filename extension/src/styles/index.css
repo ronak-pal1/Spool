@@ -1,0 +1,56 @@
+@import '@fontsource-variable/inter';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body {
+    @apply bg-ink-900 text-white/90 antialiased;
+    font-feature-settings: 'cv11', 'ss01', 'ss03';
+  }
+
+  * {
+    @apply border-white/10;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/60 ring-offset-2 ring-offset-ink-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 8px;
+    height: 8px;
+  }
+  ::-webkit-scrollbar-track {
+    background: transparent;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-solid border-transparent bg-white/10 bg-clip-padding;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-ink-850/70 backdrop-blur-md;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-850 shadow-card;
+  }
+
+  .label {
+    @apply text-2xs font-medium uppercase tracking-[0.14em] text-white/40;
+  }
+}
+
+@layer utilities {
+  .tabular {
+    font-variant-numeric: tabular-nums;
+  }
+}

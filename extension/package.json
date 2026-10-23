@@ -4,9 +4,9 @@
   "private": true,
   "type": "module",
   "scripts": {
-    "dev": "vite build --watch --mode development",
-    "build": "tsc -b && vite build",
-    "typecheck": "tsc -b"
+    "dev": "node scripts/dev.mjs",
+    "build": "tsc --noEmit && vite build && vite build -c vite.content.config.ts",
+    "typecheck": "tsc --noEmit"
   },
   "dependencies": {
     "@fontsource-variable/inter": "^5.1.0",
@@ -19,6 +19,7 @@
   },
   "devDependencies": {
     "@types/chrome": "^0.0.287",
+    "@types/node": "^22.10.2",
     "@types/react": "^18.3.17",
     "@types/react-dom": "^18.3.5",
     "@vitejs/plugin-react": "^4.3.4",
