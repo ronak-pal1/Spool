@@ -1,0 +1,94 @@
+[[permission]]
+identifier = "allow-list-sources"
+description = "List displays and windows."
+commands.allow = ["list_sources"]
+
+[[permission]]
+identifier = "allow-list-audio-devices"
+description = "List microphone and system-audio devices."
+commands.allow = ["list_audio_devices"]
+
+[[permission]]
+identifier = "allow-start-recording"
+description = "Start a desktop recording."
+commands.allow = ["start_recording"]
+
+[[permission]]
+identifier = "allow-pause-recording"
+description = "Pause the recording."
+commands.allow = ["pause_recording"]
+
+[[permission]]
+identifier = "allow-resume-recording"
+description = "Resume the recording."
+commands.allow = ["resume_recording"]
+
+[[permission]]
+identifier = "allow-set-mic-muted"
+description = "Mute or unmute the microphone."
+commands.allow = ["set_mic_muted"]
+
+[[permission]]
+identifier = "allow-set-system-muted"
+description = "Mute or unmute system audio."
+commands.allow = ["set_system_muted"]
+
+[[permission]]
+identifier = "allow-stop-recording"
+description = "Stop and upload the recording."
+commands.allow = ["stop_recording"]
+
+[[permission]]
+identifier = "allow-discard-recording"
+description = "Discard the recording."
+commands.allow = ["discard_recording"]
+
+[[permission]]
+identifier = "allow-restart-recording"
+description = "Restart the recording."
+commands.allow = ["restart_recording"]
+
+[[permission]]
+identifier = "allow-retry-upload"
+description = "Retry a failed upload."
+commands.allow = ["retry_upload"]
+
+[[permission]]
+identifier = "allow-recording-snapshot"
+description = "Read the current recording state."
+commands.allow = ["recording_snapshot"]
+
+[[permission]]
+identifier = "allow-prepare-area-select"
+description = "Show the area selector."
+commands.allow = ["prepare_area_select"]
+
+[[permission]]
+identifier = "allow-cancel-area-select"
+description = "Cancel area selection."
+commands.allow = ["cancel_area_select"]
+
+[[permission]]
+identifier = "allow-complete-area-select"
+description = "Confirm an area selection."
+commands.allow = ["complete_area_select"]
+
+[[permission]]
+identifier = "allow-camera-config"
+description = "Read the camera bubble configuration."
+commands.allow = ["camera_config"]
+
+[[permission]]
+identifier = "allow-set-camera-size"
+description = "Resize the camera bubble."
+commands.allow = ["set_camera_size"]
+
+[[permission]]
+identifier = "allow-set-camera-click-through"
+description = "Toggle camera click-through."
+commands.allow = ["set_camera_click_through"]
+
+[[permission]]
+identifier = "allow-set-draw-enabled"
+description = "Toggle the drawing overlay."
+commands.allow = ["set_draw_enabled"]
