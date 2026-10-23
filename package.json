@@ -1,0 +1,24 @@
+{
+  "name": "spool",
+  "private": true,
+  "version": "1.0.0",
+  "description": "Spool — asynchronous video messaging platform (web, API, Chrome extension, Tauri desktop).",
+  "workspaces": [
+    "shared",
+    "server",
+    "client",
+    "extension",
+    "desktop"
+  ],
+  "scripts": {
+    "dev:server": "npm run dev -w @spool/server",
+    "dev:client": "npm run dev -w @spool/client",
+    "dev:extension": "npm run dev -w @spool/extension",
+    "dev:desktop": "npm run tauri:dev -w @spool/desktop",
+    "build": "npm run build -w @spool/server && npm run build -w @spool/client && npm run build -w @spool/extension && npm run build -w @spool/desktop",
+    "typecheck": "npm run typecheck --workspaces --if-present"
+  },
+  "engines": {
+    "node": ">=20.10"
+  }
+}

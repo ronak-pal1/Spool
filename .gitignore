@@ -1,0 +1,12 @@
+node_modules/
+dist/
+build/
+*.tsbuildinfo
+.env
+.env.local
+server/data/
+desktop/src-tauri/target/
+desktop/src-tauri/gen/schemas/
+extension/dist/
+.DS_Store
+*.log
