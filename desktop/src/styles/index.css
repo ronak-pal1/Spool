@@ -1,0 +1,63 @@
+@import '@fontsource-variable/inter';
+@import '@fontsource-variable/jetbrains-mono';
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+@layer base {
+  :root {
+    color-scheme: dark;
+  }
+
+  html,
+  body,
+  #root {
+    height: 100%;
+    background: transparent;
+  }
+
+  body {
+    margin: 0;
+    font-feature-settings: 'cv11', 'ss01';
+    @apply text-white/90 antialiased;
+  }
+
+  body[data-window='main'] {
+    background: #08090b;
+  }
+
+  body[data-window='bar'],
+  body[data-window='camera'],
+  body[data-window='area'],
+  body[data-window='draw'] {
+    user-select: none;
+    overflow: hidden;
+  }
+
+  * {
+    @apply border-white/10;
+  }
+
+  :focus-visible {
+    @apply outline-none ring-2 ring-accent/60 ring-offset-2 ring-offset-ink-900;
+  }
+
+  ::-webkit-scrollbar {
+    width: 10px;
+    height: 10px;
+  }
+  ::-webkit-scrollbar-thumb {
+    @apply rounded-full border-2 border-solid border-transparent bg-white/10 bg-clip-padding;
+  }
+}
+
+@layer components {
+  .glass {
+    @apply border border-white/10 bg-ink-850/80 backdrop-blur-md;
+  }
+
+  .surface {
+    @apply rounded-2xl border border-white/[0.07] bg-ink-850 shadow-card;
+  }
+}

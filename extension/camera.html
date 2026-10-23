@@ -1,0 +1,18 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="color-scheme" content="dark" />
+    <title>Spool camera</title>
+  </head>
+  <body>
+    <div class="frame">
+      <video id="video" autoplay muted playsinline></video>
+      <div class="state" id="state" data-kind="loading">
+        <span class="spinner"></span>
+        <span class="message" id="message"></span>
+      </div>
+    </div>
+    <script type="module" src="/src/camera/main.ts"></script>
+  </body>
+</html>
