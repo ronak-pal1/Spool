@@ -142,7 +142,7 @@ export function CommandPalette() {
                       active ? 'bg-white/[0.06]' : 'hover:bg-white/[0.03]',
                     )}
                   >
-                    {active && <motion.span layoutId="palette-active" className="absolute inset-y-2 left-0 w-[2px] rounded-full bg-accent" />}
+                    {active && <span className="absolute inset-y-2 left-0 w-[2px] rounded-full bg-accent" />}
                     {isVideo ? (
                       <>
                         <span className="relative h-10 w-16 shrink-0 overflow-hidden rounded-md border border-white/10 bg-ink-700">

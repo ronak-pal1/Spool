@@ -120,8 +120,20 @@ export function RecordPage() {
   const clock = useRef({ startedAt: 0, accumulated: 0, running: false });
   const finishingRef = useRef(false);
   const cameraVideoRef = useRef<HTMLVideoElement | null>(null);
+  const [cameraFloating, setCameraFloating] = useState(false);
   const micLevel = useAudioLevel(phase === 'setup' ? micPreview : null);
   const needsCamera = mode !== 'screen';
+
+  useEffect(() => {
+    // Picture-in-picture events bubble from the video element to the document.
+    const sync = () => setCameraFloating(document.pictureInPictureElement !== null && document.pictureInPictureElement === cameraVideoRef.current);
+    document.addEventListener('enterpictureinpicture', sync);
+    document.addEventListener('leavepictureinpicture', sync);
+    return () => {
+      document.removeEventListener('enterpictureinpicture', sync);
+      document.removeEventListener('leavepictureinpicture', sync);
+    };
+  }, []);
 
   useEffect(() => {
     if (phase !== 'setup' || !micEnabled) {
@@ -532,6 +544,12 @@ export function RecordPage() {
                     {mode === 'screen-camera' && (
                       <div className="absolute bottom-4 left-4 h-28 w-28 overflow-hidden rounded-full shadow-pop ring-2 ring-accent/50">
                         <video ref={bindVideo(recorderRef.current?.cameraStream, cameraVideoRef)} autoPlay muted playsInline className="h-full w-full scale-x-[-1] object-cover" />
+                        {cameraFloating && (
+                          <div className="absolute inset-0 flex flex-col items-center justify-center gap-1 bg-ink-850 text-accent">
+                            <PictureInPicture2 className="h-5 w-5" />
+                            <span className="text-[10px] font-medium text-white/60">Floating</span>
+                          </div>
+                        )}
                       </div>
                     )}
                   </>

@@ -108,7 +108,7 @@ export function ShareDialog({ open, onClose, video }: { open: boolean; onClose: 
                       <span className="block text-xs text-white/45">{option.description}</span>
                     </span>
                     <span className={cn('flex h-4 w-4 items-center justify-center rounded-full border transition', active ? 'border-accent' : 'border-white/20')}>
-                      {active && <motion.span layoutId="share-radio" className="h-2 w-2 rounded-full bg-accent" />}
+                      {active && <span className="h-2 w-2 rounded-full bg-accent shadow-[0_0_8px_rgba(0,250,154,0.8)]" />}
                     </span>
                   </button>
                 );
