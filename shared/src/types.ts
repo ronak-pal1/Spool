@@ -298,6 +298,8 @@ export interface SystemStatus {
   llm: string | null;
   embeddings: string | null;
   maxRecordingSeconds: number;
+  /** Public origin of the web app; recorders open `${webUrl}/s/${shareId}` after an upload. */
+  webUrl: string;
 }
 
 export interface ListVideosQuery {

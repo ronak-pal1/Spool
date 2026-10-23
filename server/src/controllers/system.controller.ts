@@ -15,6 +15,7 @@ export function health(_req: Request, res: Response) {
     llm: env.ai.llmProvider ? `${env.ai.llmProvider}:${env.ai.llmModel}` : null,
     embeddings: env.ai.llmProvider ? `${env.ai.llmProvider}:${env.ai.embeddingModel}` : null,
     maxRecordingSeconds: env.maxRecordingSeconds,
+    webUrl: env.clientUrl.replace(/\/+$/, ''),
   };
   res.json(body);
 }
